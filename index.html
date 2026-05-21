@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2M Store | Digital Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-layer">
+        <div class="shape-1"></div>
+        <div class="shape-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+
+        <!-- 1. Lado Esquerdo (Logo) -->
+        <div class="logo-box">
+            <img src="/img/2M STORE.png" alt="2M Store Logo">
+        </div>
+
+        <!-- 2. Centro (Nav) -->
+        <nav id="nav-menu">
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <!-- 3. Lado Direito -->
+        <div class="header-auth">
+            <div id="auth-nav">
+                <a href="javascript:void(0)" onclick="openModal('loginModal')" class="login-btn">Login</a>
+            </div>
+            <div id="user-nav" class="hidden">
+                <a href="javascript:void(0)" onclick="openDashboard()" class="user-badge">
+                    <i class="fa-regular fa-user"></i> <span id="user-name-display">Perfil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1 class="reveal">2M Store</h1>
+        <span class="silver-text font-serif italic reveal delay-1">Digital Excellence</span>
+        <p class="reveal delay-2">Produtos digitais e soluções modernas para elevar seu projeto ao nível das maiores startups do mundo.</p>
+        <div class="hero-btns reveal delay-3" style="display: flex; gap: 20px; width: 100%; max-width: 500px;">
+            <a href="#produtos" class="btn-pill">Explorar Loja</a>
+            <a href="#contato" class="btn-pill" style="background: transparent; border-color: #333;">Falar Conosco</a>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="about-section" id="sobre">
+        <div class="about-container reveal">
+            <div class="about-content">
+                <h2>Onde tecnologia <br> encontra o <span class="font-serif italic">design</span>.</h2>
+                <div class="about-description">
+                    <p>A <b>2M Store</b> não é apenas uma loja. É um ecossistema curado de ativos digitais para quem não aceita o genérico.</p>
+                    <p>Focamos em entregar performance, segurança e uma estética impecável em cada script, template ou serviço prestado.</p>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="stat-number">01</span>
+                    <h4>Qualidade Premium</h4>
+                    <p>Código limpo e interfaces de alto nível.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">02</span>
+                    <h4>Suporte Ágil</h4>
+                    <p>Atendimento humano e especializado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section class="projects-section" id="produtos">
+        <div class="projects-header reveal">
+            <h2>Produtos <span class="font-serif italic">Exclusivos</span></h2>
+            <p>Soluções prontas para escalar o seu negócio digital.</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Produto 1 -->
+            <div class="project-card reveal">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Produto">
+                </div>
+                <div class="project-info">
+                    <div class="tech-tags">
+                        <span>SaaS</span>
+                        <span>Backend</span>
+                    </div>
+                    <h3>Nexus Dashboard V2</h3>
+                    <p>Sistema completo de gerenciamento com UI futurista e integração de pagamentos.</p>
+                    <div style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">R$ 249,00</div>
+                    <div class="project-buttons">
+                        <a href="javascript:void(0)" class="card-btn" onclick="buyProduct('Nexus Dashboard V2')">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="project-card reveal">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1000&auto=format&fit=crop" alt="Produto">
+                </div>
+                <div class="project-info">
+                    <div class="tech-tags">
+                        <span>Scripts</span>
+                        <span>Automation</span>
+                    </div>
+                    <h3>Bot Ultra-Speed</h3>
+                    <p>Automação de processos repetitivos com 99.9% de eficiência e logs em tempo real.</p>
+                    <div style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">R$ 180,00</div>
+                    <div class="project-buttons">
+                        <a href="javascript:void(0)" class="card-btn" onclick="buyProduct('Bot Ultra-Speed')">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section class="contact-section" id="contato">
+        <div class="contact-container reveal">
+            <div class="contact-header">
+                <h2>Iniciar <span class="font-serif italic">Projeto</span></h2>
+                <p>Tem uma ideia ou precisa de suporte personalizado? Envie uma mensagem.</p>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <div id="form-content">
+                    <form id="contact-form">
+                        <div class="input-row">
+                            <input type="text" id="name" name="name" placeholder="Seu nome" class="input-field" required>
+                            <input type="email" id="email" name="email" placeholder="Seu e-mail" class="input-field" required>
+                        </div>
+                        <textarea id="message" name="message" placeholder="Como podemos ajudar?" class="input-field" style="height: 150px; resize: none;" required></textarea>
+                        <button type="submit" id="submit-btn" class="btn-pill btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+                <div id="success-message" style="display:none;">
+                    <h3 class="font-serif italic" style="font-size: 32px;">Obrigado!</h3>
+                    <p>Sua mensagem foi enviada com sucesso. Retornaremos em breve.</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-item">Instagram</a>
+                    <span class="divider">/</span>
+                    <a href="#" class="social-item">Discord</a>
+                    <span class="divider">/</span>
+                    <a href="#" class="social-item">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modais (Login / Cadastro / Dashboard) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content" style="background: #080808; border-color: #1a1a1a;">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 class="font-serif italic" style="font-size: 36px; margin-bottom: 30px;">Login</h2>
+            <input type="email" id="user-email" placeholder="E-mail" class="input-field">
+            <input type="password" id="user-pass" placeholder="Senha" class="input-field">
+            <button class="btn-pill" onclick="login()" style="margin-top: 10px;">Acessar Loja</button>
+            <p style="margin-top: 20px; font-size: 13px; color: #666;">Não tem conta? <a href="javascript:void(0)" onclick="switchModal('loginModal', 'registerModal')" style="color: #fff;">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content" style="background: #080808; border-color: #1a1a1a;">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2 class="font-serif italic" style="font-size: 36px; margin-bottom: 30px;">Criar Conta</h2>
+            <input type="text" id="reg-name" placeholder="Nome Completo" class="input-field">
+            <input type="email" id="reg-email" placeholder="Melhor E-mail" class="input-field">
+            <input type="password" placeholder="Defina uma Senha" class="input-field">
+            <button class="btn-pill" onclick="register()" style="margin-top: 10px;">Cadastrar</button>
+        </div>
+    </div>
+
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content" style="background: #080808; border-color: #1a1a1a; text-align: left;">
+            <span class="close" onclick="closeModal('dashboardModal')">&times;</span>
+            <h2 class="font-serif italic" style="font-size: 32px; border-bottom: 1px solid #1a1a1a; padding-bottom: 15px;">Área do Cliente</h2>
+            <p style="margin: 20px 0;">Olá, <b id="dash-name">Usuário</b>!</p>
+            <div style="background: #0c0c0c; padding: 20px; border-radius: 12px; border: 1px solid #1f1f1f;">
+                <h4 style="margin-bottom: 10px; font-size: 14px; color: #444; letter-spacing: 1px;">MEUS PRODUTOS</h4>
+                <div id="purchased-items" style="font-size: 14px; color: #888;">Nenhum produto adquirido.</div>
+            </div>
+            <button class="btn-pill" onclick="logout()" style="margin-top: 30px; background: transparent; color: #ff4444; border-color: #222;">Sair da conta</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-line"></div>
+        <p>&copy; 2024 2M STORE. PROJETADO PARA A ELITE DIGITAL.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
