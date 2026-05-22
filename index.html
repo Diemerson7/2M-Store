@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2M Store | Digital Premium</title>
+    <title>2M Store </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +25,7 @@
 
         <!-- 1. Lado Esquerdo (Logo) -->
         <div class="logo-box">
-            <img src="/img/2M STORE.png" alt="2M Store Logo">
+            <img src="img/Icon 3D - Fundo Preto.png" alt="2M Store Logo">
         </div>
 
         <!-- 2. Centro (Nav) -->
@@ -36,14 +37,7 @@
 
         <!-- 3. Lado Direito -->
         <div class="header-auth">
-            <div id="auth-nav">
-                <a href="javascript:void(0)" onclick="openModal('loginModal')" class="login-btn">Login</a>
-            </div>
-            <div id="user-nav" class="hidden">
-                <a href="javascript:void(0)" onclick="openDashboard()" class="user-badge">
-                    <i class="fa-regular fa-user"></i> <span id="user-name-display">Perfil</span>
-                </a>
-            </div>
+            <a href="login.html" class="login-btn">Entrar</a>
         </div>
     </header>
 
@@ -140,7 +134,6 @@
             </div>
             
             <div class="contact-form-wrapper">
-                <div id="form-content">
                     <form id="contact-form">
                         <div class="input-row">
                             <input type="text" id="name" name="name" placeholder="Seu nome" class="input-field" required>
@@ -149,7 +142,7 @@
                         <textarea id="message" name="message" placeholder="Como podemos ajudar?" class="input-field" style="height: 150px; resize: none;" required></textarea>
                         <button type="submit" id="submit-btn" class="btn-pill btn-submit">Enviar Mensagem</button>
                     </form>
-                </div>
+
                 <div id="success-message" style="display:none;">
                     <h3 class="font-serif italic" style="font-size: 32px;">Obrigado!</h3>
                     <p>Sua mensagem foi enviada com sucesso. Retornaremos em breve.</p>
@@ -204,7 +197,7 @@
 
     <footer>
         <div class="footer-line"></div>
-        <p>&copy; 2024 2M STORE. PROJETADO PARA A ELITE DIGITAL.</p>
+        <p>&copy; 2024 2M STORE.</p>
     </footer>
 
     <script src="script.js"></script>
