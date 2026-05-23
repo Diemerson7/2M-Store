@@ -63,6 +63,35 @@ h1, h2, h3 {
 html {
     /* Faz o scroll ficar suave nativamente */
     scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+/* 2. Ajuste específico para o Textarea (Como podemos ajudar?) */
+textarea.input-field {
+    color: #ffffff !important; /* Garante que o texto que você digita seja branco */
+    resize: none; /* Opcional: tira aquele triângulo de arrastar no canto, fica mais clean */
+    scrollbar-width: thin; /* Para Firefox: deixa a barra fininha */
+    scrollbar-color: #222 transparent; /* Para Firefox: barra cinza escura */
+}
+
+/* 3. Tirar ou customizar a barra branca no Chrome/Edge/Safari */
+textarea.input-field::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea.input-field::-webkit-scrollbar-track {
+    background: transparent; /* Fundo da barra transparente */
+}
+
+textarea.input-field::-webkit-scrollbar-thumb {
+    background-color: #222; /* Cor da "pecinha" que sobe e desce */
+    border-radius: 10px;
+    border: 2px solid #0c0c0c; /* Cria um respiro em volta da barra */
+}
+
+/* 4. Garantir que o placeholder não seja tão escuro */
+textarea.input-field::placeholder {
+    color: #555 !important;
 }
 
 section {
@@ -628,4 +657,52 @@ footer {
     padding: 0 !important;
     line-height: 1 !important;
     z-index: 10 !important;
+}
+
+/* Estilo do Perfil Logado */
+.user-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Pequeno círculo de avatar (opcional) */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #111;
+    border: 1px solid #1f1f1f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Botão Sair (Subtil) */
+.logout-btn {
+    color: #ff4444;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: none;
+    border: none;
+}
+
+.logout-btn:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
 }
