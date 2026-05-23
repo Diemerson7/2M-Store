@@ -17,6 +17,8 @@ function checkAuth() {
     const userNav = document.getElementById('user-nav');
     const userNameDisplay = document.getElementById('user-name-display');
 
+    if (!authNav || !userNav) return;
+
     if (currentUser) {
         authNav.classList.add('hidden');
         userNav.classList.remove('hidden');
@@ -43,7 +45,6 @@ function register() {
 function login() {
     const email = document.getElementById('user-email').value;
     if (email) {
-        // Simulação de login
         currentUser = JSON.parse(localStorage.getItem('user2M')) || { name: 'Cliente Premium', email: email, products: [] };
         localStorage.setItem('user2M', JSON.stringify(currentUser));
         closeModal('loginModal');
@@ -113,7 +114,6 @@ if (contactForm) {
 // --- SCROLL SUAVE PROFISSIONAL ---
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        // Ignora links que são apenas "#" ou vazios
         if (this.getAttribute('href') === '#') return;
 
         e.preventDefault();
@@ -121,7 +121,6 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            // Calcula a posição final descontando a altura do header
             const headerHeight = document.querySelector('header').offsetHeight;
             const targetPosition = targetElement.offsetTop - headerHeight;
 
@@ -129,13 +128,28 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
                 top: targetPosition,
                 behavior: 'smooth'
             });
-
-            // Se for mobile, você pode fechar o menu aqui (caso tenha um menu hambúrguer)
-            // closeMobileMenu(); 
         }
     });
 });
 
+// --- INICIALIZAR ---
+document.addEventListener('DOMContentLoaded', () => {
 
-// Inicializar
+// Lógica do "Olho"
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('passwordInput');
+const eyeIcon = document.getElementById('eyeIcon');
+
+if (togglePassword && passwordInput && eyeIcon) {
+    togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        togglePassword.style.color = isPassword ? '#fff' : '#666';
+        eyeIcon.innerHTML = isPassword
+            ? `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>`
+            : `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
+    });
+}
+
 checkAuth();
+});
