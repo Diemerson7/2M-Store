@@ -10,7 +10,7 @@ import {
 
 // --- CONFIGURAÇÃO FIREBASE ---
 const firebaseConfig = {
-    apiKey: "CHAVE_REMOVIDA    ",
+    apiKey: "AIzaSyC4dW5nHvQXcpjNeFH-w0NLzAFNdqj5gnM",
     authDomain: "register-and-login---dark.firebaseapp.com",
     projectId: "register-and-login---dark",
     storageBucket: "register-and-login---dark.firebasestorage.app",
