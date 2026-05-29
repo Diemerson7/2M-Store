@@ -504,15 +504,6 @@ footer {
     margin-bottom: 32px; 
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .about-container { grid-template-columns: 1fr; text-align: center; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .input-row { grid-template-columns: 1fr; }
-    .contact-form-wrapper { padding: 30px 20px; }
-}
-
-
 /* Página de Login e Cadastro */
 /* BACKGROUND - Ajustado para não esticar */
 .bg-layer {
@@ -705,4 +696,132 @@ footer {
 .logout-btn:hover {
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+}
+
+/* --- FIX DO OLHO NA PÁGINA DE LOGIN --- */
+/* 1. O container 'relative' que trava o olho no lugar */
+.password-box {
+    position: relative !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 2. O botão do olho milimetricamente centralizado */
+.eye-button {
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* Centralização vertical matemática */
+    background: none !important;
+    border: none !important;
+    padding: 20px !important;
+    cursor: pointer;
+    z-index: 10;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-button:hover {
+    color: #fff;
+}
+
+/* 3. Força o texto do login a ser branco */
+#passwordLogin, #emailLogin {
+    color: #ffffff !important;
+    padding-right: 50px !important; /* Espaço para o texto não ficar embaixo do olho */
+}
+
+/* --- RESPONSIVIDADE (MOBILE) CORRIGIDA --- */
+
+@media (max-width: 768px) {
+    header {
+        /* Mantemos 3 colunas, mas damos mais espaço para o meio (nav) */
+        grid-template-columns: 0.6fr 1.2fr 0.6fr !important; 
+        height: 80px !important;
+        padding: 0 15px !important;
+    }
+
+    /* FAZENDO OS LINKS VOLTAREM (A parte que faltava) */
+    nav {
+        display: flex !important; /* Garante que apareça */
+        gap: 15px !important; /* Espaço menor entre os links para caber */
+        justify-content: center !important;
+    }
+
+    nav a {
+        font-size: 13px !important; /* Fonte menor para não quebrar linha */
+        font-weight: 600 !important;
+        text-transform: none !important;
+        letter-spacing: 0px !important;
+    }
+
+    .logo-box {
+        margin-left: 20px !important;
+        background: transparent !important;
+        border: none !important;
+        width: auto !important;
+        height: auto !important;
+        margin-bottom: 0 !important; /* Tira a margem que empurra o header */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+
+    .logo-box img {
+        /* Ajusta o tamanho da logo para ficar nítida no celular */
+        height: 45px !important; 
+        width: auto !important;
+        filter: none !important; /* Garante que não tenha brilhos estranhos */
+        mix-blend-mode: screen !important; 
+    }
+
+    .login-btn {
+        padding: 6px 20px !important; /* Botão mais compacto */
+        font-size: 11px !important;
+    }
+
+    /* Ajuste da Hero para o texto não ficar gigante */
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 42px !important;
+        letter-spacing: -2px;
+    }
+
+    .silver-text {
+        font-size: 30px !important;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    /* Botões empilhados para melhor clique */
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        gap: 10px;
+    }
+
+    .btn-pill {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Grids das outras seções em 1 coluna */
+    .about-container, 
+    .projects-grid, 
+    .input-row {
+        grid-template-columns: 1fr !important;
+        gap: 25px;
+    }
 }
